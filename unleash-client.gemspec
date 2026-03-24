@@ -21,9 +21,9 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'bin'
   spec.executables   = spec.files.grep(%r{^bin/unleash}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.required_ruby_version = ">= 2.7"
+  spec.required_ruby_version = ">= 3.1"
 
-  spec.add_dependency "ld-eventsource", "2.2.4" unless RUBY_ENGINE == 'jruby'
+  spec.add_dependency "ld-eventsource", "~> 2.5.1" unless RUBY_ENGINE == 'jruby'
   spec.add_dependency "yggdrasil-engine", "~> 1.2.2"
 
   spec.add_dependency "base64", "~> 0.3.0"
@@ -34,13 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.12"
   spec.add_development_dependency "rspec-json_expectations", "~> 2.2"
   spec.add_development_dependency "webmock", "~> 3.18.1"
-
-  # rubocop:disable Gemspec/RubyVersionGlobalsUsage, Style/IfUnlessModifier
-  if Gem::Version.new(RUBY_VERSION) > Gem::Version.new('3.0')
-    spec.add_development_dependency "rubocop", "~> 1.75"
-  end
-  # rubocop:enable Gemspec/RubyVersionGlobalsUsage, Style/IfUnlessModifier
-
+  spec.add_development_dependency "rubocop", "~> 1.75"
   spec.add_development_dependency "simplecov", "~> 0.21.2"
   spec.add_development_dependency "simplecov-lcov", "~> 0.8.0"
 end
