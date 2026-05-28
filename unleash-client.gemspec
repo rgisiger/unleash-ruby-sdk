@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.required_ruby_version = ">= 3.1"
 
-  spec.add_dependency "ld-eventsource", "~> 2.5.1" unless RUBY_ENGINE == 'jruby'
+  spec.add_dependency "ld-eventsource", "~> 2.5" unless RUBY_ENGINE == 'jruby'
   spec.add_dependency "yggdrasil-engine", "~> 1.3.0"
 
   spec.add_dependency "base64", "~> 0.3.0"
